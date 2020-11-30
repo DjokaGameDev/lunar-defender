@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/autoload/audio_manager.gd" type="Script" id=1]
+[ext_resource path="res://assets/music/Drone ambience loopable.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/music/Ennemy_1_Loop.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/music/Ennemy_6_Loop.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/music/Ennemy_5_Loop.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/music/Ennemy_3_Loop.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/music/Ennemy_2_Loop.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/music/Ennemy_4_Loop.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/music/Boss_1_Loop.wav" type="AudioStream" id=9]
+
+[node name="audio_manager" type="Node"]
+script = ExtResource( 1 )
+
+[node name="music" type="Node" parent="."]
+
+[node name="music_player_1" type="AudioStreamPlayer" parent="music"]
+volume_db = -30.0
+bus = "Music"
+
+[node name="Tween" type="Tween" parent="music/music_player_1"]
+
+[node name="music_player_2" type="AudioStreamPlayer" parent="music"]
+volume_db = -30.0
+bus = "Music"
+
+[node name="Tween" type="Tween" parent="music/music_player_2"]
+
+[node name="MusicBase" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 2 )
+volume_db = -3.0
+bus = "Music"
+
+[node name="Tween" type="Tween" parent="music/MusicBase"]
+
+[node name="MusicEnemy1" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 3 )
+volume_db = -80.0
+bus = "Music"
+
+[node name="Tween" type="Tween" parent="music/MusicEnemy1"]
+
+[node name="MusicEnemy2" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 7 )
+volume_db = -80.0
+bus = "Music"
+
+[node name="Tween" type="Tween" parent="music/MusicEnemy2"]
+
+[node name="MusicEnemy3" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 6 )
+volume_db = -80.0
+bus = "Music"
+
+[node name="Tween" type="Tween" parent="music/MusicEnemy3"]
+
+[node name="MusicEnemy4" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 8 )
+volume_db = -80.0
+bus = "Music"
+
+[node name="Tween" type="Tween" parent="music/MusicEnemy4"]
+
+[node name="MusicEnemy5" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 5 )
+volume_db = -80.0
+bus = "Music"
+
+[node name="Tween" type="Tween" parent="music/MusicEnemy5"]
+
+[node name="MusicEnemy6" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 4 )
+volume_db = -80.0
+bus = "Music"
+
+[node name="Tween" type="Tween" parent="music/MusicEnemy6"]
+
+[node name="MusicBoss" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 9 )
+volume_db = -80.0
+bus = "Music"
+
+[node name="Tween" type="Tween" parent="music/MusicBoss"]
+
+[node name="sfx" type="Node" parent="."]
+
+[node name="sfx_player_1" type="AudioStreamPlayer" parent="sfx"]
+bus = "SFX"
+
+[node name="sfx_player_2" type="AudioStreamPlayer" parent="sfx"]
+bus = "SFX"
+
+[node name="sfx_player_3" type="AudioStreamPlayer" parent="sfx"]
+bus = "SFX"

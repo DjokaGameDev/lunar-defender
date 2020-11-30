@@ -1,0 +1,124 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://level/GUI/Credit.gd" type="Script" id=1]
+[ext_resource path="res://assets/font/StrenuousBL16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/font/StrenuousBL28.tres" type="DynamicFont" id=3]
+
+[node name="Credit" type="ColorRect"]
+margin_right = 1600.0
+margin_bottom = 896.0
+color = Color( 0.117647, 0.117647, 0.117647, 0.941176 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Creators" type="Label" parent="."]
+margin_left = 720.0
+margin_top = 64.0
+margin_right = 880.0
+margin_bottom = 112.0
+custom_fonts/font = ExtResource( 3 )
+text = "Creators"
+align = 1
+valign = 1
+
+[node name="Creators2" type="Label" parent="."]
+margin_left = 695.0
+margin_top = 113.0
+margin_right = 905.0
+margin_bottom = 161.0
+custom_fonts/font = ExtResource( 2 )
+text = "CreepDeluxe & Djokavex"
+align = 1
+valign = 1
+
+[node name="Sound and Music" type="Label" parent="."]
+margin_left = 676.0
+margin_top = 208.0
+margin_right = 927.0
+margin_bottom = 256.0
+custom_fonts/font = ExtResource( 3 )
+text = "Sound and Music"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound and Music2" type="Label" parent="."]
+margin_left = 720.0
+margin_top = 258.0
+margin_right = 880.0
+margin_bottom = 306.0
+custom_fonts/font = ExtResource( 2 )
+text = "CreepDeluxe"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Graphics" type="Label" parent="."]
+margin_left = 720.0
+margin_top = 376.0
+margin_right = 880.0
+margin_bottom = 424.0
+custom_fonts/font = ExtResource( 3 )
+text = "Graphics"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Graphics2" type="Label" parent="."]
+margin_left = 720.0
+margin_top = 426.0
+margin_right = 880.0
+margin_bottom = 474.0
+custom_fonts/font = ExtResource( 2 )
+text = "CreepDeluxe"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Assets" type="Label" parent="."]
+margin_left = 697.0
+margin_top = 536.0
+margin_right = 904.0
+margin_bottom = 584.0
+custom_fonts/font = ExtResource( 3 )
+text = "Other Assets"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Assets2" type="Label" parent="."]
+margin_left = 720.0
+margin_top = 579.0
+margin_right = 880.0
+margin_bottom = 627.0
+custom_fonts/font = ExtResource( 2 )
+text = "CraftPix.net"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 696.0
+margin_top = 792.0
+margin_right = 904.0
+margin_bottom = 836.0
+custom_fonts/font = ExtResource( 2 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]

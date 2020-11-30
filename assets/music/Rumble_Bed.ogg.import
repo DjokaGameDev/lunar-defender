@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Rumble_Bed.ogg-e68358daf56b6086a46c1678500f4450.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Rumble_Bed.ogg"
+dest_files=[ "res://.import/Rumble_Bed.ogg-e68358daf56b6086a46c1678500f4450.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

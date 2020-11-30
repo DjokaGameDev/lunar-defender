@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://level/Battlefield/HarvestableRessource.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/GUI/Shop_Cristal_Icon_01.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/effects/white_glowing_circle.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 13.1811
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0.730682 ), 0.0, 0.0, 0, 0, Vector2( 0.112, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.256, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 3.0
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 15.0
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.06
+scale_curve = SubResource( 3 )
+
+[node name="HarvestableRessource" type="Area2D"]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.0312481, 0.0312498 )
+scale = Vector2( 0.109167, 0.0884309 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+visible = false
+modulate = Color( 3, 3, 3, 1 )
+emitting = false
+amount = 1
+lifetime = 2.0
+explosiveness = 0.1
+randomness = 0.5
+process_material = SubResource( 4 )
+texture = ExtResource( 3 )

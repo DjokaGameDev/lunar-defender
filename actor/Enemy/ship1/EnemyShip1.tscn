@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/img/enemy/Ship_04.png" type="Texture" id=1]
+[ext_resource path="res://actor/Enemy/ship1/EnemyShip1.gd" type="Script" id=2]
+
+[node name="EnemyShip1" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
+scale = Vector2( 0.07, 0.1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 40, 0, 16, 8, -28.3379, 36.6721, -39.1924, 8.82777, -38.9565, -8.75189, -27.748, -35.1804, 17.912, -8.27995 )

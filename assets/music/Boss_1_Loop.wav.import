@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Boss_1_Loop.wav-d72d4738c321955e679787c5177e2f94.sample"
+
+[deps]
+
+source_file="res://assets/music/Boss_1_Loop.wav"
+dest_files=[ "res://.import/Boss_1_Loop.wav-d72d4738c321955e679787c5177e2f94.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

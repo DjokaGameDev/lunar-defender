@@ -1,0 +1,71 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "JSONBeautifier",
+"language": "GDScript",
+"path": "res://addons/json_beautifier/json_beautifier.gd"
+}, {
+"base": "Node",
+"class": "Persistence",
+"language": "GDScript",
+"path": "res://addons/PersistenceNode/persistence_node.gd"
+} ]
+_global_script_class_icons={
+"JSONBeautifier": "",
+"Persistence": "res://addons/PersistenceNode/icon.png"
+}
+
+[application]
+
+config/name="LunarDefender"
+run/main_scene="res://level/GUI/GeneralMenu.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+global="*res://assets/autoload/global.gd"
+EventBus="*res://assets/autoload/EventBus.gd"
+PersistenceNode="*res://assets/autoload/PersistenceNode.tscn"
+tower_select="*res://assets/autoload/tower_select.gd"
+audio_manager="*res://assets/autoload/audio_manager.tscn"
+
+[debug]
+
+settings/stdout/print_fps=true
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "PersistenceNode" )
+
+[layer_names]
+
+2d_physics/layer_1="building"
+2d_physics/layer_2="ally"
+2d_physics/layer_3="enemy"
+2d_physics/layer_4="ally_projectile"
+2d_physics/layer_5="enemy_projectile"
+2d_physics/layer_6="collectible"
+2d_physics/layer_7="ally_air"
+2d_physics/layer_8="enemy_air"
+
+[rendering]
+
+quality/intended_usage/framebuffer_allocation.mobile=1
+environment/default_environment="res://default_env.tres"

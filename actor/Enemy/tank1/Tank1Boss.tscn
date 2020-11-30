@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://actor/Enemy/EnemyActor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/img/enemy/Gun_01.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/enemy/Hull_01.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/enemy/Gun_05_B.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/enemy/Track_1_B.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/enemy/Track_1_A.png" type="Texture" id=6]
+[ext_resource path="res://actor/Enemy/tank1/Tank1Boss.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 42.6339, 31.9712 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 409.912
+
+[sub_resource type="Animation" id=3]
+resource_name = "destroy"
+length = 0.1
+
+[node name="Tank1Boss" instance=ExtResource( 1 )]
+script = ExtResource( 7 )
+starting_health = 750
+type = 5
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" parent="EnemyDetection" index="0"]
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" parent="." index="2"]
+anims/destroy = SubResource( 3 )
+
+[node name="ShotTimer" parent="." index="4"]
+wait_time = 0.75
+
+[node name="LifeBar" parent="GUI" index="0"]
+margin_left = -24.236
+margin_top = -62.1811
+margin_right = 23.764
+margin_bottom = -54.1811
+
+[node name="Track_1_A" type="Sprite" parent="." index="7"]
+position = Vector2( 0, -23.9449 )
+rotation = 1.5708
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 6 )
+
+[node name="Track_1_B" type="Sprite" parent="." index="8"]
+position = Vector2( 0, 24.3944 )
+rotation = 1.5708
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 5 )
+
+[node name="Hull_01" type="Sprite" parent="." index="9"]
+rotation = 1.5708
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 3 )
+
+[node name="Gun_05_B" type="Sprite" parent="." index="10"]
+position = Vector2( -16.8378, 3.55271e-15 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="Gun_02" type="Sprite" parent="." index="11"]
+position = Vector2( -32.6893, -19.6633 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, -50 )
+
+[node name="Gun_03" type="Sprite" parent="." index="12"]
+position = Vector2( -32.5317, 19.748 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, -50 )
+
+[node name="Gun_04" type="Sprite" parent="." index="13"]
+position = Vector2( 30.9826, -19.8106 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, -50 )
+
+[node name="Gun_05" type="Sprite" parent="." index="14"]
+position = Vector2( 31.7832, 19.2548 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, -50 )

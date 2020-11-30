@@ -1,0 +1,218 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://actor/Tower/TowerActor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actor/Tower/TowerThunder/TowerThunder.gd" type="Script" id=2]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_011.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_023.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_010.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_013.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_015.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_017.png" type="Texture" id=8]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_024.png" type="Texture" id=9]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_025.png" type="Texture" id=10]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_026.png" type="Texture" id=11]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_022.png" type="Texture" id=12]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_029.png" type="Texture" id=13]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_027.png" type="Texture" id=14]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_014.png" type="Texture" id=15]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_016.png" type="Texture" id=16]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_020.png" type="Texture" id=17]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_004.png" type="Texture" id=18]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_012.png" type="Texture" id=19]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_018.png" type="Texture" id=20]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_021.png" type="Texture" id=21]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_007.png" type="Texture" id=22]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_003.png" type="Texture" id=23]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_002.png" type="Texture" id=24]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_005.png" type="Texture" id=25]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_001.png" type="Texture" id=26]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_008.png" type="Texture" id=27]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_009.png" type="Texture" id=28]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_019.png" type="Texture" id=29]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_028.png" type="Texture" id=30]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_000.png" type="Texture" id=31]
+[ext_resource path="res://assets/img/tower/thunder/noshadow/Thunder Tower_006.png" type="Texture" id=32]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 320.4
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/circle.png-3af02c2263b7cdc0f2f57b0d3a3e83e9.stex"
+
+[sub_resource type="Animation" id=3]
+resource_name = "close"
+length = 0.51
+step = 0.03
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.51 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "tower_closed"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21, 0.24, 0.27, 0.3, 0.33, 0.36, 0.39, 0.42, 0.45, 0.48 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 21 ), ExtResource( 29 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 32 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 31 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 31 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "open"
+length = 0.9
+step = 0.03
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21, 0.24, 0.27, 0.3, 0.33, 0.36, 0.39, 0.42, 0.45, 0.48, 0.51, 0.54, 0.57, 0.6, 0.63, 0.66, 0.69, 0.72, 0.75, 0.78, 0.81, 0.84, 0.87 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 31 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 32 ), ExtResource( 22 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 19 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 8 ), ExtResource( 20 ), ExtResource( 29 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 30 ), ExtResource( 13 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "tower_opened"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("OpeningParticles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("OpeningParticles")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "restart"
+} ]
+}
+
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array( 5.43901, -0.23411, -5.43901, 0.23411, 64.2526, -103, 7.70803, -16.0267, -7.70803, 16.0267, 30.4137, -71, 2.27276, -11.9472, -2.27276, 11.9472, 19.5729, -30.3253, 0, 0, 0, 0, 10.7465, 25.8668 )
+}
+
+[sub_resource type="Curve2D" id=7]
+_data = {
+"points": PoolVector2Array( -3.91498, -5.15787, 3.91498, 5.15787, -20.1323, -131.461, -2.21096, -18.4241, 2.21096, 18.4241, -2.15259, -88.7593, 1.26265, -11.719, -1.26265, 11.719, -4.82285, -34.1612, 0, 0, 0, 0, -16.9306, 13.1603 )
+}
+
+[sub_resource type="Gradient" id=8]
+offsets = PoolRealArray( 0, 0.885463, 1 )
+colors = PoolColorArray( 0, 0, 0, 0.509804, 1, 1, 1, 0.439216, 1, 1, 1, 0.384314 )
+
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 0.6625 ), 0.0, 0.0, 0, 0, Vector2( 0.596, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+emission_shape = 2
+emission_box_extents = Vector3( 35, 3, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+angular_velocity = 50.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.15
+scale_curve = SubResource( 11 )
+color_ramp = SubResource( 9 )
+
+[sub_resource type="StreamTexture" id=13]
+flags = 4
+load_path = "res://.import/puff.png-da90e48b8d3bdf8ced47bf2589a8002a.stex"
+
+[node name="TowerThunder" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+max_swarm_number = 1
+type = 2
+
+[node name="Sprite" parent="." index="1"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 31 )
+
+[node name="TowerAreaOfEffect" parent="." index="2"]
+shape = SubResource( 1 )
+
+[node name="AoESprite" parent="." index="3"]
+texture = SubResource( 2 )
+
+[node name="AnimationPlayer" parent="." index="4"]
+anims/close = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/open = SubResource( 5 )
+
+[node name="Path2D0" type="Path2D" parent="." index="10"]
+curve = SubResource( 6 )
+
+[node name="Path2D1" type="Path2D" parent="." index="11"]
+curve = SubResource( 7 )
+
+[node name="OpeningParticles" parent="." index="12"]
+position = Vector2( 0.297302, -12.784 )
+process_material = SubResource( 12 )
+texture = SubResource( 13 )

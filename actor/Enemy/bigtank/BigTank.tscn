@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://actor/Enemy/EnemyActor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actor/Enemy/bigtank/BigTank.gd" type="Script" id=2]
+[ext_resource path="res://assets/img/enemy/Track_1_A.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/enemy/Hull_02.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/enemy/Gun_07.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 26.2446, 19.2673 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 448.0
+
+[node name="BigTank" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+starting_health = 500
+type = 3
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" parent="EnemyDetection" index="0"]
+shape = SubResource( 2 )
+
+[node name="ShotTimer" parent="." index="4"]
+wait_time = 2.0
+
+[node name="LeftTrack" type="Sprite" parent="." index="7"]
+position = Vector2( 4.35201e-15, -14.775 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="RightTrack" type="Sprite" parent="." index="8"]
+position = Vector2( -4.74765e-15, 14.6636 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="Hull" type="Sprite" parent="." index="9"]
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="Canon" type="Sprite" parent="." index="10"]
+position = Vector2( -4.41809, 2.84217e-14 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, -47 )

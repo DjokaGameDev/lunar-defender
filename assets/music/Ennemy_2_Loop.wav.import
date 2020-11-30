@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Ennemy_2_Loop.wav-d9c9fe5a715037263ed703d7757f7892.sample"
+
+[deps]
+
+source_file="res://assets/music/Ennemy_2_Loop.wav"
+dest_files=[ "res://.import/Ennemy_2_Loop.wav-d9c9fe5a715037263ed703d7757f7892.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

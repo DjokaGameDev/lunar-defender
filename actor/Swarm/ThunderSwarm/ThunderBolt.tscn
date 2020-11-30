@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://actor/Swarm/ThunderSwarm/ThunderBolt.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.654545 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.548872, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0272727 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+flag_disable_z = true
+spread = 60.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 128.0
+initial_velocity_random = 0.5
+angular_velocity = 128.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 100.0
+scale = 3.0
+scale_curve = SubResource( 3 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "Light"
+length = 1.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1.4, 1.4, 1.4, 1 ), Color( 1.4, 1.4, 1.4, 1 ), Color( 1.4, 1.4, 1.4, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.05, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "bounce"
+}, {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Particles2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "restart"
+} ]
+}
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 128.25
+
+[node name="ThunderBolt" type="Line2D"]
+self_modulate = Color( 1.4, 1.4, 1.4, 1 )
+width = 2.0
+width_curve = SubResource( 1 )
+default_color = Color( 1, 1, 1, 1 )
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource( 1 )
+damage = 15.0
+
+[node name="Particles2D" type="Particles2D" parent="."]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
+emitting = false
+amount = 4
+explosiveness = 1.0
+randomness = 1.0
+visibility_rect = Rect2( -500, -500, 500, 500 )
+process_material = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Light"
+anims/Light = SubResource( 5 )
+
+[node name="BouncingDetection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 132
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BouncingDetection"]
+shape = SubResource( 6 )
